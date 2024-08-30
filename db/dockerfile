@@ -1,0 +1,11 @@
+FROM mysql:5.7
+
+ENV MYSQL_ROOT_PASSWORD=toor 
+ENV MYSQL_DATABASE=movie_review_db 
+ENV MYSQL_USER=ayush 
+ENV MYSQL_PASSWORD=ayush
+
+# Copy your SQL file into the Docker image
+COPY ./data.sql /docker-entrypoint-initdb.d/
+
+# This script will run automatically during the container startup
