@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #626cd6;
+    color: #fff;
+    padding: 20px;
+    /* text-align: center; */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2.2em;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    /* font-size: 1.2em; */
+    margin-top: 10px;
+}
+
+.featured-reviews {
+    padding: 20px;
+}
+
+.featured-reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.review-card h3 {
+    margin-top: 0;
+}
+
+.review-card p {
+    margin: 10px 0;
+}
+
+.review-card a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.review-card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #626cd6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
