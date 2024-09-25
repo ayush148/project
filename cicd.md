@@ -57,6 +57,30 @@ pipeline {
                 }
             }
         }
+
+
+
+    stage('Build & Tag Docker Image') {
+            steps {
+               script {
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                            sh "docker build -t rtxayush/project:web web"
+                            sh "docker build -t rtxayush/project:db db"
+                    }
+               }
+            }
+        }
+        
+        stage('Push Docker Image') {
+            steps {
+               script {
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                            sh "docker push rtxayush/project:web"
+                            sh "docker push rtxayush/project:db"
+                    }
+               }
+            }
+        }
     }
     
     post {
