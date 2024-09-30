@@ -81,6 +81,19 @@ pipeline {
                }
             }
         }
+
+        stage('Deployed Docker Image') {
+            steps {
+                sh '''
+                    docker network inspect net >/dev/null 2>&1 || docker network create net
+                    docker rm -f db || true
+                    docker rm -f web || true
+                    docker run -d --name db -e MYSQL_ROOT_PASSWORD=toor --network net rtxayush/project:db
+                    sleep 10
+                    docker run -d --name web -e host=db --network net -p 3000:3000 rtxayush/project:web
+                '''
+            }
+        }
     }
     
     post {
